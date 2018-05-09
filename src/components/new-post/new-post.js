@@ -20,12 +20,17 @@ const Error = styled.div`
   color: #e5e5e5;
 `
 
+const TextArea = styled.textarea`
+  width: 400px;
+  height: 200px;
+`
+
 const FormWrapper = styled.form`
   display: flex;
   flex-direction: column;
-  margin: 30px;
+  margin: 0 16px;
   & > *:not(:last-child) {
-    margin-bottom: 5px;
+    margin-bottom: 8px;
   }
 `
 
@@ -51,6 +56,7 @@ const NewPost = () => (
         {submitError &&
           (!dirtySinceLastSubmit &&
             submitFailed && <Error type="error">{submitError}</Error>)}
+        <h1>New Post</h1>
         <Field
           autoComplete="off"
           component="input"
@@ -59,7 +65,7 @@ const NewPost = () => (
         />
         <Field
           autoComplete="off"
-          component="textarea"
+          component={TextArea}
           name="text"
           placeholder="Text"
           multiline
