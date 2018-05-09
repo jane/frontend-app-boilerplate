@@ -45,8 +45,7 @@
     "recompose": "0.27.0",
     "resolve": "1.7.1",
     "styled-components": "3.2.6",
-    "whatwg-fetch": "2.0.4",
-    "zeelib": "7.0.2"
+    "whatwg-fetch": "2.0.4"
   },
   "devDependencies": {
     "babel-core": "6.26.3",

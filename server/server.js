@@ -4,7 +4,6 @@ import cors from 'koa-cors'
 import serve from 'koa-simple-static'
 import bodyParser from 'koa-body-parser'
 import { resolve } from 'path'
-import open from 'zeelib/lib/open'
 import { isProd } from './util'
 import pkg from '../package.json'
 import index from './layout'
@@ -67,7 +66,4 @@ app.use(router.routes())
 
 app.listen(app.port, () => {
   console.log(`${pkg.name} server listening on ${app.port}`)
-  if (!isProd) {
-    open('http://localhost:8081')
-  }
 })
