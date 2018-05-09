@@ -3,7 +3,6 @@
   "description": "Jane React/Koa boilerplate",
   "version": "0.0.1",
   "main": "server/index.js",
-  "bugs": "https://github.com/jane/frontend-boilerplate/issues",
   "scripts": {
     "build": "node scripts/build.js",
     "format": "prettier \"{src,server,scripts,config}/**/*.js\" --write",
@@ -17,6 +16,7 @@
     "test:lint": "eslint -c .eslintrc.json server/ src/ scripts/ config/"
   },
   "homepage": "https://github.com/jane/frontend-boilerplate#readme",
+  "bugs": "https://github.com/jane/frontend-boilerplate/issues",
   "dependencies": {
     "babel-plugin-transform-object-rest-spread": "6.26.0",
     "babel-polyfill": "6.26.0",
