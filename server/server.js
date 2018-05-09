@@ -6,6 +6,12 @@ import bodyParser from 'koa-body-parser'
 import { resolve } from 'path'
 import open from 'zeelib/lib/open'
 import { isProd } from './util'
+import index from './layout'
+import {
+  getAllPosts,
+  getPost,
+  savePost,
+} from './mock-data'
 
 const app = new Koa()
 const router = new Router()
@@ -13,9 +19,6 @@ const router = new Router()
 app.port = process.env.PORT || 8081
 app.use(cors())
 app.use(bodyParser())
-
-const getAllPosts = () =>
-  Promise.resolve([{ title: 'post one', text: 'i am the first post', id: 1 }])
 
 router.get('/posts', async (ctx) => {
   try {
@@ -28,12 +31,6 @@ router.get('/posts', async (ctx) => {
   }
 })
 
-const getPost = (id) =>
-  Promise.resolve({
-    id,
-    title: 'i am the post you wanted',
-    body: 'totally a real post',
-  })
 router.get('/posts/:id', async (ctx) => {
   try {
     const post = await getPost(ctx.params.id)
@@ -45,11 +42,9 @@ router.get('/posts/:id', async (ctx) => {
   }
 })
 
-const savePost = (body) => Promise.resolve(`totally saved post ${body.title}`)
 router.post('/posts', async (ctx) => {
   try {
-    console.dir(ctx, { colors: true })
-    const res = await savePost(ctx.body)
+    const res = await savePost(ctx.request.body)
     ctx.body = res
   } catch (err) {
     console.trace(err)
@@ -63,22 +58,8 @@ app.use(
   })
 )
 
-router.get('*', async (ctx) => {
-  ctx.body = `
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="shortcut icon" href="/favicon.ico">
-    <title>Frontend Boilerplate</title>
-  </head>
-  <body>
-    <main></main>
-    <script src="${isProd ? '' : 'http://localhost:3000'}/bundle.js"></script>
-  </body>
-</html>
-`
+router.get('*', (ctx) => {
+  ctx.body = index()
 })
 
 app.use(router.routes())
