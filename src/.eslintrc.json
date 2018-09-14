@@ -1,0 +1,6 @@
+{
+  "extends": [
+    "plugin:jane/react",
+    "plugin:jane/jest"
+  ]
+}

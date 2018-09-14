@@ -1,7 +1,10 @@
 {
   "root": true,
-  "extends": "eslint-config-jane",
-  "rules": {
-    "react/prop-types": 0
-  }
+  "extends": [
+    "plugin:jane/recommended",
+    "plugin:jane/prettier"
+  ],
+  "plugins": [
+    "jane"
+  ]
 }

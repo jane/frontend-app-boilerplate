@@ -3,9 +3,9 @@ const pkg = require('../package.json')
 const { resolve } = require('path')
 const isProd = process.env.NODE_ENV === 'production'
 
-require('babel-register')({
+require('@babel/register')({
   presets: [require('babel-preset-latest-minimal')],
-  plugins: [require('babel-plugin-transform-object-rest-spread')],
+  plugins: [require('@babel/plugin-proposal-object-rest-spread').default],
 })
 
 if (isProd) {

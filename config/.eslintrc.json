@@ -1,0 +1,9 @@
+{
+  "extends": [
+    "plugin:jane/node"
+  ],
+  "rules": {
+    "no-console": 0,
+    "node/no-unpublished-requiure": 0
+  }
+}

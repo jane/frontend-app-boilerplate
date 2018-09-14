@@ -1,0 +1,8 @@
+{
+  "extends": [
+    "plugin:jane/node"
+  ],
+  "rules": {
+    "no-console": 0
+  }
+}

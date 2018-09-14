@@ -12,12 +12,26 @@ const publicPath = isProd ? paths.servedPath : '/'
 const publicUrl = isProd ? publicPath.slice(0, -1) : ''
 const env = getClientEnvironment(publicUrl)
 
+const babelConfig = {
+  presets: ['@babel/preset-react', '@babel/preset-env'],
+  plugins: [
+    'transform-react-remove-prop-types',
+    '@babel/plugin-proposal-class-properties',
+    '@babel/plugin-proposal-object-rest-spread',
+    'styled-components',
+    'styled-name',
+  ],
+
+  compact: isProd,
+  cacheDirectory: !isProd,
+}
+
 module.exports = {
   bail: true,
   mode: isProd ? 'production' : 'development',
   devtool: isProd ? 'source-map' : 'cheap-module-source-map',
   entry: keep([
-    require.resolve('babel-polyfill'),
+    require.resolve('@babel/polyfill'),
     require.resolve('./polyfills'),
     !isProd && require.resolve('react-dev-utils/webpackHotDevClient'),
     paths.appIndexJs,
@@ -49,18 +63,7 @@ module.exports = {
         test: /\.js$/,
         include: paths.appSrc,
         loader: require.resolve('babel-loader'),
-        options: {
-          presets: [require('babel-preset-react'), require('babel-preset-env')],
-          plugins: [
-            require('babel-plugin-transform-react-remove-prop-types').default,
-            require('babel-plugin-transform-class-properties'),
-            require('babel-plugin-transform-object-rest-spread'),
-            require('babel-plugin-styled-components').default,
-            require('babel-plugin-styled-name').default,
-          ],
-          compact: isProd,
-          cacheDirectory: !isProd,
-        },
+        options: babelConfig,
       },
     ],
   },
@@ -93,6 +96,6 @@ module.exports = {
     child_process: 'empty',
   },
   performance: {
-    hints: isProd ? 'error' : false,
+    hints: isProd ? 'warning' : false,
   },
 }

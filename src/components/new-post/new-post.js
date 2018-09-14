@@ -4,14 +4,7 @@ import { Form, Field } from 'react-final-form'
 import { FORM_ERROR } from 'final-form'
 import { postPost } from '../../operations/posts'
 import validate from './validate'
-
-const Button = styled.button`
-  border: 1px solid rebeccapurple;
-  font-weight: 500;
-  margin: 8px;
-  padding: 8px;
-  text-align: center;
-`
+import Button from 'jane-components/lib/button'
 
 const Error = styled.div`
   padding: 15px;
@@ -70,7 +63,7 @@ const NewPost = () => (
           placeholder="Text"
           multiline
         />
-        <Button>Submit</Button>
+        <Button type="primary">Submit</Button>
       </FormWrapper>
     )}
   />
