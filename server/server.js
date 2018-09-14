@@ -7,11 +7,7 @@ import { resolve } from 'path'
 import { isProd } from './util'
 import pkg from '../package.json'
 import index from './layout'
-import {
-  getAllPosts,
-  getPost,
-  savePost,
-} from './mock-data'
+import { getAllPosts, getPost, savePost } from './mock-data'
 
 const app = new Koa()
 const router = new Router()

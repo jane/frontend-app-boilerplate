@@ -70,9 +70,7 @@ const NewPost = () => (
           placeholder="Text"
           multiline
         />
-        <Button>
-          Submit
-        </Button>
+        <Button>Submit</Button>
       </FormWrapper>
     )}
   />

@@ -6,5 +6,5 @@ export const getPosts = () => r2.get('/posts').json
 
 export const postPost = (body) =>
   r2.post('/posts', {
-    json: body
+    json: body,
   }).json
