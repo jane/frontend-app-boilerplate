@@ -1,5 +1,7 @@
 # Frontend Boilerplate
 
+Also see [frontend-library-boilerplate](https://github.com/jane/frontend-library-boilerplate).
+
 * Koa 2
 * React, React-Router
 * Dummy CircleCI Config
