@@ -1,5 +1,6 @@
 import Koa from 'koa'
 import Router from 'koa-router'
+import lowercase from 'koa-lowercase'
 import cors from 'koa-cors'
 import serve from 'koa-simple-static'
 import bodyParser from 'koa-body-parser'
@@ -15,6 +16,7 @@ const router = new Router()
 app.port = process.env.PORT || 8081
 app.use(cors())
 app.use(bodyParser())
+app.use(lowercase)
 
 router.get('/posts', async (ctx) => {
   try {
