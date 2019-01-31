@@ -47,8 +47,9 @@ const NewPost = () => (
     }) => (
       <FormWrapper onSubmit={handleSubmit}>
         {submitError &&
-          (!dirtySinceLastSubmit &&
-            submitFailed && <Error type="error">{submitError}</Error>)}
+          (!dirtySinceLastSubmit && submitFailed && (
+            <Error type="error">{submitError}</Error>
+          ))}
         <h1>New Post</h1>
         <Field
           autoComplete="off"
