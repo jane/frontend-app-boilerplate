@@ -1,4 +1,4 @@
-FROM janedev/base-dev
+FROM janedev/node-base
 RUN mkdir -p /app
 WORKDIR /app
 ADD . .
