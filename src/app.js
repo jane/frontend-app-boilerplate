@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import * as React from 'react'
 import { Route } from 'react-router'
 import Header from './components/header'
 import NewPost from './components/new-post'
@@ -12,12 +12,12 @@ const Body = styled.div`
 `
 
 const App = () => (
-  <Fragment>
+  <React.Fragment>
     <Header />
     <Body>
       <Route exact path="/" component={NewPost} />
     </Body>
-  </Fragment>
+  </React.Fragment>
 )
 
 export default App
