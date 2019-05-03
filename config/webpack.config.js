@@ -13,15 +13,17 @@ const publicUrl = isProd ? publicPath.slice(0, -1) : ''
 const env = getClientEnvironment(publicUrl)
 
 const babelConfig = {
-  presets: ['@babel/preset-react', '@babel/preset-env'],
+  presets: [
+    '@babel/preset-react',
+    '@babel/preset-typescript',
+    '@babel/preset-env',
+  ],
   plugins: [
-    'transform-react-remove-prop-types',
     '@babel/plugin-proposal-class-properties',
     '@babel/plugin-proposal-object-rest-spread',
     'styled-components',
     'styled-name',
   ],
-
   compact: isProd,
   cacheDirectory: !isProd,
 }
@@ -53,14 +55,14 @@ module.exports = {
     modules: ['node_modules', paths.appNodeModules].concat(
       process.env.NODE_PATH.split(path.delimiter).filter(Boolean)
     ),
-    extensions: ['.js', '.json'],
+    extensions: ['.js', '.json', '.ts', '.tsx'],
     plugins: [new ModuleScopePlugin(paths.appSrc, [paths.appPackageJson])],
   },
   module: {
     strictExportPresence: true,
     rules: [
       {
-        test: /\.js$/,
+        test: /\.tsx?$/,
         include: paths.appSrc,
         loader: require.resolve('babel-loader'),
         options: babelConfig,
