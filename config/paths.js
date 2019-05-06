@@ -1,3 +1,4 @@
+/* eslint-disable node/no-deprecated-api */
 const path = require('path')
 const fs = require('fs')
 const url = require('url')
@@ -30,13 +31,12 @@ const getServedPath = (appPackageJson) => {
   return ensureSlash(servedUrl, true)
 }
 
-// config after eject: we're in ./config/
 module.exports = {
   appBuild: resolveApp('build'),
   appPublic: resolveApp('public'),
-  appIndexJs: resolveApp('src/index.js'),
+  appIndexJs: resolveApp('src/client/index.tsx'),
   appPackageJson: resolveApp('package.json'),
-  appSrc: resolveApp('src'),
+  appSrc: resolveApp('src/client'),
   appNodeModules: resolveApp('node_modules'),
   publicUrl: getPublicUrl(resolveApp('package.json')),
   servedPath: getServedPath(resolveApp('package.json')),

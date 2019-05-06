@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "target": "es2015",
+    "jsx": "preserve"
+  },
+  "include": [
+    "src"
+  ]
+}
