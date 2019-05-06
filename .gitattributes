@@ -1,1 +1,4 @@
+* text=auto
+text eol=lf
 package-lock.json -diff
+*.js linguist-language=TypeScript
