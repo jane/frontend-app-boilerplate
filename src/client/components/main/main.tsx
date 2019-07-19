@@ -10,7 +10,7 @@ const Wrapper = styled('main')({
 })
 
 type MainState = {
-  data: Array<string>
+  data: string[]
 }
 
 export default class Main extends React.Component<{}, MainState> {

@@ -75,9 +75,7 @@ const onProxyError = (proxy) => (err, req, res) => {
     res.writeHead(500)
   }
   res.end(
-    `Proxy error: Could not proxy request ${
-      req.url
-    } from ${host} to ${proxy} (${err.code}).`
+    `Proxy error: Could not proxy request ${req.url} from ${host} to ${proxy} (${err.code}).`
   )
 }
 
