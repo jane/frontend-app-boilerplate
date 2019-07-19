@@ -12,6 +12,7 @@
     "clean": "rm -rf lib && mkdir -p lib/{server,client}",
     "format": "prettier \"{src,server,scripts,config}/**/*.{js,ts,tsx}\" --write",
     "prebuild": "npm run clean && sortpack && npm t",
+    "preversion": "npm run build",
     "start": "run-p start:server start:client",
     "start:client": "node scripts/start.js",
     "start:server": "nodemon",
