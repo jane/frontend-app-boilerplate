@@ -1,6 +1,6 @@
 import * as http from 'http'
 import * as Koa from 'koa'
-import * as Router from 'koa-router'
+import * as Router from '@koa/router'
 import * as lowercase from 'koa-lowercase'
 import * as cors from 'koa-cors'
 import * as serve from 'koa-simple-static'
