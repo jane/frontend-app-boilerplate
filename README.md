@@ -1,7 +1,5 @@
 # Frontend Boilerplate
 
-Also see [frontend-library-boilerplate](https://github.com/jane/frontend-library-boilerplate) and [typescript-microservice-boilerplate](https://github.com/jane/typescript-microservice-boilerplate).
-
 * Koa 2
 * React, React-Router
 * TypeScript
