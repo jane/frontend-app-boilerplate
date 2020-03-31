@@ -1,5 +1,7 @@
 # Frontend Boilerplate
 
+### Deprecated: Use Next.js + Koa + TS for new web apps
+
 * Koa 2
 * React, React-Router
 * TypeScript
